@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.slick_slider .slick-prev, .slick_slider .slick-next {
+	background-color: #06ace8 !important;
+	color: #06ace8 !important;
+}
+.slick-slide {
+	background-color: #e8eaf6;
+	padding-left: 35px;
+}

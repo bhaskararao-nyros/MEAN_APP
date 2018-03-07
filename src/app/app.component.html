@@ -1,0 +1,93 @@
+<div class="container">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Compare Cars</a>
+      </div>
+    </div>
+  </nav>
+  <div class="compare_slider_blk" *ngIf="showComparePage">
+    <ul class="list-group">
+      <li class="list-group-item list_grp_header">
+        <ul class="list-header">
+          <li></li>
+          <li>Model Name</li>
+          <li>Price</li>
+          <li>Mileage</li>
+          <li>Manufactured</li>
+          <li>Engine Cap</li>
+          <li>Weight</li>
+        </ul>
+      </li>
+      <li class="list-group-item" *ngFor="let car of cars">
+        <ul class="list-body">
+          <li class="car_image">
+              <input type="checkbox" name="checkcar"
+              (change)="moveToSlider(car, $event)" [checked]="car.checked">
+            <img class="img-thumbnail" src="./../assets/images/{{car.image}}.jpg" width="150px" height="100px;">
+          </li>
+          <li class="car_name">{{car.name}}</li>
+          <li class="car_price">&#8377; {{car.price}}</li>
+          <li class="car_mileage">{{car.mileage}} km</li>
+          <li class="car_manuf">{{car.manufactured}}</li>
+          <li class="car_cap">{{car.engine_cap}} cc</li>
+          <li class="car_weight">{{car.weight}} kg</li>
+        </ul>
+      </li>
+    </ul> 
+
+  <button class="btn btn-md btn-default compare_btn" [ngClass]="{'compare_btn_addClass':showCompareBlk}" (click)="toggleCompare()">Compare({{dup_slider_cars.length}}) 
+  <span *ngIf="showDown" class="glyphicon glyphicon-collapse-down"></span>
+  <span *ngIf="!showDown" class="glyphicon glyphicon-collapse-up"></span></button>
+  <div class="col-md-12 col-sm-12 col-xs-12 compare_blk" [ngClass]="{'compare_blk_addClass':showCompareBlk}">
+    <div class="col-md-10 col-sm-10 col-xs-10">
+      <div class="slick_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+        <div *ngFor="let car of slider_cars">
+          <div><h3>
+            <img class="img-rounded slider_img" src="./../assets/images/{{car.image}}.jpg" width="150px" height="100px;">
+            <span class="del_btn glyphicon glyphicon-remove-circle" 
+            *ngIf="car.name"
+            (click)="removeCar(car)"></span>
+          </h3></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-2 col-xs-2 text-center">
+      <button class="btn btn-md btn-info" style="margin-top: 30px;" (click)="compareNow()">Compare Now</button>
+      <button class="btn btn-md btn-warning" (click)="delCompareCars()" style="margin-top: 10px;">Clear All</button>
+    </div>
+  </div>
+</div>
+
+<div class="compare_cars_blk" *ngIf="showDetailsPage">
+<h3 id="compare_header"><span class="glyphicon glyphicon-triangle-right"></span> User Car Comparison</h3>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px !important;">
+      <ul class="car_details_labels">
+        <li><button class="btn btn-sm btn-default" (click)="backToCompare()">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+         Back to search results</button></li>
+        <li id="details_label">CAR DETAILS</li>
+        <li class="car_labels">Name</li>
+        <li class="car_labels">Price</li>
+        <li class="car_labels">Engine Capacity</li>
+        <li class="car_labels">Mileage</li>
+        <li class="car_labels">Manufactured</li>
+        <li class="car_labels">Weight</li>
+      </ul>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-9 cars_dyn_blk">
+       <div  class="compare_cars_dyn">
+          <ul *ngFor="let car of dup_slider_cars" class="dyn_cars_list">
+            <li><span (click)="removeDetailsCar(car)" class="remove_btn glyphicon glyphicon-remove-circle"></span><img class="details_img" src="./../assets/images/{{car.image}}.jpg" width="300px" height="200px;"></li>
+            <li class="dyn_car_labels">{{car.name}}</li>
+            <li class="dyn_car_labels">&#8377; {{car.price}}</li>
+            <li class="dyn_car_labels">{{car.engine_cap}} cc</li>
+            <li class="dyn_car_labels">{{car.mileage}} km</li>
+            <li class="dyn_car_labels">{{car.manufactured}}</li>
+            <li class="dyn_car_labels">{{car.weight}} kg</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>

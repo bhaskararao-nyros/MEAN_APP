@@ -1,0 +1,151 @@
+.navbar-brand {
+	font-weight: bold !important;
+	color: red !important;
+}
+.list-header li {
+	list-style: none;
+	display: -webkit-inline-box;
+	margin-left: 88px;
+	font-weight: bold;
+	color: #fff;
+}
+.list-body li {
+	display: inline-block;
+}
+.list-body .car_name {
+	padding-left: 3%;
+	width: 17% !important;
+	color: #1f5596;
+	font-weight: bold;
+}
+.list-body .car_name:hover {
+	cursor: pointer;
+	text-decoration:underline;
+}
+.list-body .car_price {
+	padding-left: 2%;
+	color: #cc1e1e;
+	font-weight: bold;
+}
+.list-body .car_mileage {
+	padding-left: 6%;
+}
+.list-body .car_manuf {
+	padding-left: 10%;
+}
+.list-body .car_weight {
+	padding-left: 10%;
+}
+.list-body .car_cap {
+	padding-left: 13%;
+}
+.list-body .car_image {
+	margin-left: -40px;
+}
+.list_grp_header {
+	background-color: #1f5596 !important;
+}
+.list-group .list-group-item:nth-child(odd) {
+	background-color: #abeaca;
+}
+.list-group .list-group-item:nth-child(even) {
+	background-color: #76d1e8;
+}
+.del_btn {
+	margin-left: 138px;
+	margin-top: 0.6%;
+	color: #fff;
+	font-size: 20px;
+	position: absolute;
+	background-color: black;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.del_btn:hover {
+	background-color: red;
+}
+.slider_img {
+	border: 2px solid #1c313a;
+}
+.compare_blk {
+	position: fixed;
+	margin-left: -90px;
+	background-color: #e8eaf6;
+}
+.compare_btn {
+	position: fixed;
+	bottom: 2px;
+}
+.compare_blk_addClass {
+	position: fixed;
+	bottom: 2px !important;
+}
+.compare_btn_addClass {
+	position: fixed;
+	bottom: 132px;
+}
+.compare_cars_dyn ul {
+	display: inline-block;
+}
+.compare_cars_dyn ul li {
+	list-style: none;
+}
+#compare_header {
+	border: 2px solid indianred;
+	padding: 10px;
+	border-radius: 5px;
+	color: #e53935;
+}
+#details_label {
+	padding: 5px;
+	background-color: black;
+	color: #fff;
+	border-radius: 5px;
+	margin-top: 79%;
+	font-weight: bold;
+}
+.car_details_labels .car_labels {
+	background-color: #81c784;
+	margin-top: 2px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	font-weight: bold;
+}
+.dyn_cars_list li {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin-top: 2px;
+}
+.car_details_labels li {
+	list-style: none;
+}
+.dyn_cars_list .dyn_car_labels:nth-child(odd) {
+	background-color: #bdbdbd;
+}
+.dyn_cars_list .dyn_car_labels:nth-child(even) {
+	background-color: #e0e0e0;
+}
+.dyn_cars_list .dyn_car_labels {
+	padding-left: 10px;
+}
+.compare_cars_dyn {
+	display: flex;
+	overflow-x: scroll;
+}
+.remove_btn {
+	font-size: 20px;
+	margin-left: 290px;
+	z-index: 100;
+	top: 15px;
+	cursor: pointer;
+	background-color: black;
+	color: #fff;
+	border-radius: 10px;
+}
+.remove_btn:hover {
+	background-color: red;
+}
+.details_img {
+	border: 1px solid black;
+}
